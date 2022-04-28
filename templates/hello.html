@@ -1,3 +1,14 @@
-<h1>
-    Hello world Platzi, tu IP es {{ user_ip }}
-</h1>
+{% if user_ip %}
+    <h1>
+        Hello world Platzi, tu IP es {{ user_ip }}
+    </h1>
+{% else %}
+    <p>{{ user_ip }}</p>
+    <a href="{{ url_for('index') }}">Ir a inicio</a>
+{% endif %}
+
+<ul>
+    {% for todo in todos %}
+        <li>{{ todo }}</li>
+    {%endfor%}
+</ul>
